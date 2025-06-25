@@ -1,0 +1,19 @@
+# dune build
+# OCAMLPARAM: unset
+# Shared cache: enabled-except-user-rules
+# Shared cache location: /Users/maddelasaikarthik/.cache/dune/db
+# Workspace root: /Users/maddelasaikarthik/projects/ocaml_projects/hello-world
+# Auto-detected concurrency: 8
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; instrument_with = []
+#  }
+$ /Users/maddelasaikarthik/.opam/default/bin/ocamlc.opt -config > /var/folders/nx/p0_6rh9j1x3_bnq03snm7j7r0000gn/T/dune_be7127_output
+$ (cd _build/default && /Users/maddelasaikarthik/.opam/default/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -bin-annot-occurrences -I .hello.eobjs/byte -no-alias-deps -opaque -o .hello.eobjs/byte/dune__exe__Hello.cmi -c -intf hello.mli)
+$ (cd _build/default && /Users/maddelasaikarthik/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .hello.eobjs/byte -I .hello.eobjs/native -intf-suffix .ml -no-alias-deps -opaque -o .hello.eobjs/native/dune__exe__Hello.cmx -c -impl hello.ml)
+$ (cd _build/default && /Users/maddelasaikarthik/.opam/default/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o hello.exe .hello.eobjs/native/dune__exe__Hello.cmx)
