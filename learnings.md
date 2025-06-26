@@ -39,3 +39,20 @@ Extract components with this
 let (x,y) = a_tuple
 val x: int = 3
 val y: string = "three"
+
+IO:
+
+(* Then define read_lines *)
+let rec read_lines () =
+  try
+    let line = read_line () in
+    int_of_string line :: read_lines()
+  with
+    End_of_file -> []
+
+Main:
+
+let () =
+    let n::arr = read_lines() in
+    let ans = f n arr in
+    List.iter (fun x -> print_int x; print_newline ()) ans;;
