@@ -21,6 +21,10 @@ Operators:
 In Ocaml + is defined only for int's for float's use +. same thing for *, / and so on
 :: => list concatenation
 @@ => function application
+<> => not equals
+=  => equals comparision (Note: In C, Python, Java we use = for assignment)
+:= => assignment operation
+
 
 Functions:
 - Every function is like a variable and can be passed
