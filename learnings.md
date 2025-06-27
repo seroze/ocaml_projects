@@ -25,6 +25,42 @@ In Ocaml + is defined only for int's for float's use +. same thing for *, / and 
 =  => equals comparision (Note: In C, Python, Java we use = for assignment)
 := => assignment operation
 
+If/else:
+
+for and use &&
+if cond then
+  do_something
+else if cond then
+  do something
+else
+  do something etc..
+
+Error handling:
+
+Use Ok x and Error msg type syntax
+```ocaml
+
+let hamming_distance a b =
+  if List.length a = 0 && List.length b = 0 then
+    Ok 0
+  else if List.length a = 0 then
+    Error "left strand must not be empty"
+  else if List.length b = 0 then
+    Error "right strand must not be empty"
+  else if List.length a <> List.length b then
+    Error "left and right strands must be of equal length"
+  else
+    let rec compare acc = function
+      | [], [] -> Ok acc
+      | x::xs, y::ys ->
+          if x = y then compare acc (xs, ys)
+          else compare (acc + 1) (xs, ys)
+      | _ -> Error "Unexpected error" (* should never happen *)
+    in
+    compare 0 (a, b)
+  (* failwith "'hamming_distance' is missing" *)
+
+```
 
 Functions:
 - Every function is like a variable and can be passed
