@@ -7,7 +7,7 @@ Pre-requisites:
 - https://www.cs.cornell.edu/courses/cs3110/2016fa/
 - read https://dev.realworldocaml.org/guided-tour.html
 - https://www.youtube.com/watch?v=36_epDp_MZg&list=PLF-pVzrCrXdj7rBvOOwulglwwDjVy96uI&index=7
-
+- https://www.youtube.com/watch?v=mtrzgNqL_A8&list=PLt0HgEXFOHdkE-NTs87s7QjwYwqeihb-D&index=2 (lectures of kc from iit madras)
 
 In function programming we don't mutate variables, everything is immutable.
 
