@@ -101,3 +101,14 @@ let rec zip xs ys =
 
 (*Algebraic data types *)
 (* bst *)
+
+
+(* Function composition *)
+let compose f g = fun x -> f (g x)
+
+(* Test *)
+let double x = 2*x in
+let square x = x*x in
+let double_then_square = compose square double in
+
+double_then_square 3
