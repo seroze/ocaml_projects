@@ -51,3 +51,53 @@ let distance p1 p2 =
   sqrt ((p1.x -. p2.x) ** 2. + (p1.y -. p2.y) ** 2.)
 
 (* Implement quick sort *)
+let rec quicksort lst =
+  match lst with
+  | [] -> []
+  | pivot :: rest ->
+    let left = List.filter (fun x -> x < pivot ) rest in
+    let right = List.filter (fun x -> x >= pivot ) rest in
+    quicksort left @ [pivot] @ quicksort right
+
+(* Implement a factorial with Tail Recursion *)
+(* What's tail recusion by the way and why is it better than normal recursion *)
+(* if recursion is the last call then compiler can avoid growing the call stack
+it's like a for loop *)
+let rec factorial n =
+  let rec helper acc k =
+    if k <= 1 then acc else helper (acc*k) (k-1)
+  in
+  helper 1 n
+
+(* Fast exponentiation (Tail-recursive)*)
+let rec power x n =
+  if n = 0 then 1
+  else if n mod 2 = 0 then
+    let half = power x (n/2) in
+    half * half
+  else
+    x * power x (n-1)
+
+(* Flatten a list *)
+type 'a nested_list =
+  | Elem of 'a
+  | List of 'a nested_list lst
+
+let rec flatten lst =
+  match lst with
+  | Elem x -> [x]
+  | List xs -> List.concat (List.map flatten xs)
+
+(* Test *)
+let nested = List [Elem 1; List [Elem 2; Elem 3;]; Elem 4] in
+flatten nested (* Should return [1; 2; 3; 4] *)
+
+(* Zipping two lists *)
+let rec zip xs ys =
+  match (xs, ys) with
+    | (x::xt, y::yt) -> (x, y) :: zip xt yt
+    | _ -> [] (* default case *)
+
+
+(*Algebraic data types *)
+(* bst *)
